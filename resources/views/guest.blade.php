@@ -89,7 +89,7 @@
     const generateMessageAndCopyMessage = (name, link) => {
         const text = `
             _"Tuhan membuat segala sesuatu indah pada waktu-Nya. Indah saat Ia mempertemukan, indah saat Ia menumbuhkan kasih, dan indah saat Ia mempersatukan dalam ikatan pernikahan kudus"_
-            \nKepada:\nYth. ` + name + `
+            \nKepada:\nYth. *` + name + `*
             \nDengan penuh rasa syukur, perkenankan kami mengundang Bapak/Ibu/Saudara/i untuk bersama merayakan kebahagiaan kami yang akan bersatu dalam ikatan Sakramen Perkawinan Kudus              
             \n*Eugenia Tyaswening Kristiasancti*\ndan\n*Leonardus Firstanto Padmatirta*
             \nTanpa mengurangi rasa hormat, silakan mengakses undangan digital melalui tautan berikut,
