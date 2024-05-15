@@ -15,8 +15,6 @@ class GuestTableSeeder extends Seeder
      */
     public function run()
     {
-        
-
         DB::table('guest')->delete();
         
         DB::table('guest')->insert(array (
