@@ -67,12 +67,44 @@
                     <td>{{ $data->slug }}</td>
                     <td><a href='{{ $base_url.$data->slug }}' target="_blank">{{ $base_url.$data->slug }}</a></td>
                     <td><button onclick="copyToClipboard('{{ $base_url.$data->slug }}')">Copy</button></td>
-                    <td><button onclick="generateMessage('{{ $data->name }}', '{{ $data->sesi }}')">Generate</button></td>
+                    <td><button onclick="generateMessageAndCopyMessage('{{ $data->name }}', '{{ $base_url.$data->slug }}')">Generate & Copy Message</button></td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
 </body>
+
+<script type="text/javascript">
+    const copyToClipboard = (str) => {
+        const el = document.createElement('textarea');
+        el.value = str;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        alert('Link copied to clipboard');
+    }
+
+    const generateMessageAndCopyMessage = (name, link) => {
+        const text = `
+            _"Tuhan membuat segala sesuatu indah pada waktu-Nya. Indah saat Ia mempertemukan, indah saat Ia menumbuhkan kasih, dan indah saat Ia mempersatukan dalam ikatan pernikahan kudus"_
+            \nKepada:\nYth. ` + name + `
+            \nDengan penuh rasa syukur, perkenankan kami mengundang Bapak/Ibu/Saudara/i untuk bersama merayakan kebahagiaan kami yang akan bersatu dalam ikatan Sakramen Perkawinan Kudus              
+            \n*Eugenia Tyaswening Kristiasancti*\ndan\n*Leonardus Firstanto Padmatirta*
+            \nTanpa mengurangi rasa hormat, silakan mengakses undangan digital melalui tautan berikut,
+            \n ` + link + `
+            \n_Kehadiran dan doa dari Bapak/Ibu/Saudara/i sangat berarti bagi kami._
+            \nKami yang berbahagia,\n*Keluarga Dr. Ir. Andreas Wahyu K, M.Eng - Dra. Maria Titi P*\n*Keluarga Yoseph Arie Sixtioso L - Margaretha Padmi Rahayu*\n*Wening dan Leo*
+        `;
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        alert("Formatted message copied to clipboard!");
+    }
+</script>
 
 </html>
